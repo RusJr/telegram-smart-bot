@@ -22,7 +22,7 @@ else:
 
 for handler in handlers:
     handler.setFormatter(formatter)
-    handler.setLevel(logging.INFO)
+    handler.setLevel(LOGGING_LEVEL)
 
 
 def get_logger():
@@ -35,3 +35,6 @@ def get_logger():
         logger.addHandler(handl)
 
     return logger
+
+
+logging.basicConfig(level=LOGGING_LEVEL, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
