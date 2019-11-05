@@ -1,11 +1,11 @@
-import random
+import logging
+
 import telegram
 
 from p_bot import PBotManager
-from utils.logger import get_logger
 
 
-logger = get_logger()
+logger = logging.getLogger('telegram-smart-bot')
 
 
 def send_text(update, text):

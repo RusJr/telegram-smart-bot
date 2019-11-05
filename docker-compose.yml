@@ -1,15 +1,14 @@
-version: '2'
+version: '3'
+
 
 services:
 
     telebot_run:
-        restart: on-failure
         build:
             context: .
             dockerfile: Dockerfile
-#        tty: true
-        logging: &logging
-            driver: "json-file"
-            options:
-                max-size: "200k"
-                max-file: "10"
+        restart: always
+#        logging: &logging
+#            driver: "json-file"
+#            options:
+#                max-size: "500m"

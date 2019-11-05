@@ -1,8 +1,12 @@
-from telegram import Bot
+import logging
+
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 import handlers
 import conf
+
+
+logger = logging.getLogger('telegram-smart-bot')
 
 
 updater = Updater(token=conf.telegram_bot_token)
@@ -13,5 +17,5 @@ updater.dispatcher.add_handler(MessageHandler(Filters.text | Filters.sticker, ha
 
 if __name__ == '__main__':
     updater.start_polling(clean=True)
-    print('Ехала...')
+    logger.info('Started...')
     updater.idle()
